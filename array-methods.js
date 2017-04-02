@@ -1,11 +1,15 @@
-var dataset = require('./dataset.json');
-
+var dataset = require('./dataset.json').bankBalances;
+//console.log(dataset);
 /*
   create an array with accounts from bankBalances that are
   greater than 100000.00
   assign the resulting array to `hundredThousandairs`
 */
-var hundredThousandairs = null;
+
+var overHundredThousand = function(element,index,array){
+  return parseInt(element.amount) > 100000.00;
+};
+var hundredThousandairs = dataset.filter(overHundredThousand);
 
 /*
   set a new key for each object in bankBalances named `rounded`
@@ -18,6 +22,8 @@ var hundredThousandairs = null;
     }
   assign the resulting array to `roundedDollar`
 */
+
+
 var roundedDollar = null;
 
 /*
