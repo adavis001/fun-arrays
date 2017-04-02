@@ -23,8 +23,16 @@ var hundredThousandairs = dataset.filter(overHundredThousand);
   assign the resulting array to `roundedDollar`
 */
 
+var roundUp = function(element,index,arry){
 
-var roundedDollar = null;
+  return {
+    "amount": element.amount,
+    "state": element.state,
+    "rounded": Math.round(parseFloat(element.amount))
+  };
+};
+console.log(Math.round(822370.71));
+var roundedDollar = dataset.map(roundUp);
 
 /*
   set a the `amount` value for each object in bankBalances
